@@ -1,7 +1,9 @@
 from fastapi import FastAPI
 from app.schemas import HouseInput
 from app.predict import predict_price
+import os
 
+port = int(os.environ.get("PORT", 8000))
 app = FastAPI()
 
 @app.get("/")
